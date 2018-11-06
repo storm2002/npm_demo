@@ -20,9 +20,13 @@ pipeline {
       sh "npm run build"
       }
     }
+    stage('PM2 install'){
+      steps {
+      sh "npm install pm2@latest -g"
+      }
     stage('Start application'){
       steps {
-      sh "npm start"
+      sh "pm2 start server.js -f"
       }
     }
   }
