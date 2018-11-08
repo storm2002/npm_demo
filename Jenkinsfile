@@ -24,6 +24,7 @@ pipeline {
       steps {
       sh "npm install pm2@latest -g"
       }
+    }
     stage('Start application'){
       steps {
       sh "pm2 start server.js -f"
